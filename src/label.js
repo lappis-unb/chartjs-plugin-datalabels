@@ -157,7 +157,16 @@ function drawText(ctx, lines, rect, model) {
 	ctx.textAlign = align;
 	ctx.textBaseline = 'middle';
 
+  var valueFont = ctx.canvas.dataset.value || ctx.font;
+  var labelFont = ctx.canvas.dataset.label || ctx.font;
+
 	for (i = 0; i < ilen; ++i) {
+    if (i === 0) {
+      ctx.font = valueFont;
+    } else {
+      ctx.font = labelFont;
+    }
+
 		ctx.fillText(
 			lines[i],
 			rasterize(x),
