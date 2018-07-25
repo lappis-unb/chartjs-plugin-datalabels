@@ -173,7 +173,7 @@ function drawText(ctx, lines, rect, model) {
 			rasterize(y),
 			rasterize(rect.w));
 
-		y += lh;
+		y += lh + 5;
 	}
 }
 
